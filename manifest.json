@@ -1,0 +1,22 @@
+{ 
+    "manifest_version": 2, //固定的
+    "name": "一键评教-八一农大版", //插件名称
+    "version": "1.0", //插件使用的版本
+    "description": "一键评教 By Liang YaLong", //插件的描述
+    "browser_action": { //插件加载后生成图标
+        "default_icon": "cc.gif",//图标的图片
+        "default_title": "一键评教-八一农大版", //鼠标移到图标显示的文字 
+        "default_popup": "popup.html" //单击图标执行的文件
+    }, 
+    "permissions": [ //允许插件访问的url
+        "http://*/", 
+        "bookmarks", 
+        "tabs", 
+        "history" 
+    ],
+     "content_scripts": [{  //对页面内容进行操作的脚本
+         "matches": ["http://*/*","https://*/*"],  //满足什么条件执行该插件 
+         "js": ["js/jquery-1.9.1.min.js", "js/js.js"],
+         "run_at": "document_end"
+    }] 
+}
